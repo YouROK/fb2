@@ -80,18 +80,25 @@ type Binary struct {
 }
 
 type Sections struct {
-	P        []string `xml:"p" bson:"p"`
-	Title    string   `xml:"title"`
-	Image    Image    `xml:"image"`
-	Subtitle string   `xml:"subtitle"`
+	P     []string `xml:"p" bson:"p"`
+	Title Title    `xml:"title"`
+	Image struct {
+		Href string `xml:"href,attr" bson:"href"`
+	} `xml:"image"`
+	Subtitle string `xml:"subtitle"`
+}
+
+type Title struct {
+	P []string `xml:"p"`
 }
 
 type Body struct {
-	Sections  []Sections `xml:"section" bson:"section"`
-	Title     string     `xml:"title"`
-	Image     Image      `xml:"image"`
-	EmptyLine []string   `xml:"empty-line"`
-	Subtitle  string     `xml:"subtitle"`
+	Sections []Sections `xml:"section" bson:"section"`
+	Title    string     `xml:"title"`
+	Image    struct {
+		Href string `xml:"href,attr" bson:"href"`
+	} `xml:"image"`
+	Subtitle string `xml:"subtitle"`
 }
 
 // AuthorType embedded fb2 type, represents author info
