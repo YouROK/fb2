@@ -3,7 +3,7 @@ package fb2
 import (
 	"io"
 
-	prototype "github.com/centrypoint/fb2/prototype"
+	prototype "github.com/vdovindima/fb2/prototype"
 	"golang.org/x/text/encoding/charmap"
 )
 
