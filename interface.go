@@ -80,7 +80,10 @@ type Binary struct {
 }
 
 type Sections struct {
-	P []string `xml:"p" bson:"p"`
+	P        []string `xml:"p" bson:"p"`
+	Title    string   `xml:"title"`
+	Image    Image    `xml:"image"`
+	Subtitle string   `xml:"subtitle"`
 }
 
 type Body struct {
