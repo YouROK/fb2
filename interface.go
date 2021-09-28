@@ -2,8 +2,6 @@ package fb2
 
 import (
 	"encoding/xml"
-
-	proto "github.com/vdovindima/fb2/prototype"
 )
 
 // List of interfaces for integration
@@ -31,7 +29,7 @@ type TitleInfo struct {
 	GenreType  []string     `xml:"genreType" bson:"genreType"`
 	Author     []AuthorType `xml:"author" bson:"author"`
 	BookTitle  string       `xml:"book-title" bson:"book-title"`
-	Annotation string       `xml:"annotation" bson:"annotation"`
+	Annotation Title       `xml:"annotation" bson:"annotation"`
 	Keywords   string       `xml:"keywords" bson:"keywords"`
 	Date       string       `xml:"date" bson:"date"`
 	Coverpage  Coverpage    `xml:"coverpage" bson:"coverpage"`
@@ -94,7 +92,7 @@ type Title struct {
 
 type Body struct {
 	Sections []Sections `xml:"section" bson:"section"`
-	Title    string     `xml:"title"`
+	Title    Title     `xml:"title"`
 	Image    struct {
 		Href string `xml:"href,attr" bson:"href"`
 	} `xml:"image"`
@@ -163,6 +161,3 @@ type TitleType struct {
 // PType embedded fb2 type, represents paragraph
 type PType struct {
 }
-
-// ProtoFB2 type
-type ProtoFB2 proto.PFB2
