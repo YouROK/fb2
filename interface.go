@@ -55,7 +55,7 @@ type DocumentInfo struct {
 	SrcOcr      string       `xml:"src-ocr" bson:"src-ocr"`
 	ID          string       `xml:"id" bson:"id"`
 	Version     float64      `xml:"version" bson:"version"`
-	History     string       `xml:"history" bson:"history"`
+	History     Title        `xml:"history" bson:"history"`
 }
 
 type PublishInfo struct {
